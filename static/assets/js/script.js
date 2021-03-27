@@ -54,7 +54,7 @@
         $(".div-player h2")[0].innerText = player1["name"];
         $(".div-player h2")[1].innerText = player2["name"];
         $([document.documentElement, document.body]).animate({
-                scrollTop: $($(".div-player")[0]).offset().top
+                scrollTop: $($(".div-player")[0]).offset().top - 100
             }, 2000);
         //$("#greeting").css("display", "none");
         //$("#game-settings").css("display", "none");
