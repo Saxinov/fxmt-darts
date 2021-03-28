@@ -165,13 +165,14 @@
             
     var submit_new_player = () => {
         player_name = $("#new-player-name").val();
+        encoded_name = encodeURI(player_name);
         $.ajax({
             url: `${window.origin}/create-player`,
-            data: {"name": encodeURI(player_name)},
+            data: {"name": encoded_name},
             type: "GET",
             cache: false,
             success: function() {
-                window.location.href = `${window.origin}/welcome`
+                window.location.href = `${window.origin}/welcome/${encoded_name}`
             },
             error: function () {
                 $("<p class='error-message'>Could not create player.</p>").insertAfter('#submit-new-player')

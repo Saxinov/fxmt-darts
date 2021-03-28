@@ -9,8 +9,8 @@
 		<title>FXMT Darts</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="static/assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="static/assets/css/noscript.css" /></noscript>
+		<link rel="stylesheet" href="{{ url_for('static', filename='/assets/css/main.css') }}" />
+		<noscript><link rel="stylesheet" href="{{ url_for('static', filename='/assets/css/noscript.css') }}" /></noscript>
 	</head>
 	<body class="landing is-preload">
 
@@ -27,7 +27,7 @@
 									<div id="menu">
 										<ul>
 											<li><a href="{{ url_for('greet')}}">Home</a></li>
-											<li><a href="{{ url_for('add_player')}}">Stats</a></li>
+											<li><a href="{{ url_for('add_player')}}">New Player</a></li>
 										</ul>
 									</div>
 								</li>
@@ -39,7 +39,7 @@
 					<section id="banner">
 						<div class="logo">
 							<h2>FXMT Darts</h2>
-							<img id="logo-image" src="static/images/fox_blue.png">
+							<img id="logo-image" src="{{ url_for('static', filename='/images/fox_blue.png') }}">
 						</div>
                         {% block content %}
                         {% endblock content %}
@@ -58,14 +58,14 @@
 </div>
 
 <!-- Scripts -->
-<script src="static/assets/js/jquery.min.js"></script>
-<script src="static/assets/js/jquery.scrollex.min.js"></script>
-<script src="static/assets/js/jquery.scrolly.min.js"></script>
-<script src="static/assets/js/browser.min.js"></script>
-<script src="static/assets/js/breakpoints.min.js"></script>
-<script src="static/assets/js/util.js"></script>
-<script src="static/assets/js/main.js"></script>
-<script src="static/assets/js/script.js"></script>
+<script src="{{ url_for('static', filename='/assets/js/jquery.min.js') }}"></script>
+<script src="{{ url_for('static', filename='/assets/js/jquery.scrollex.min.js') }}"></script>
+<script src="{{ url_for('static', filename='/assets/js/jquery.scrolly.min.js') }}"></script>
+<script src="{{ url_for('static', filename='/assets/js/browser.min.js') }}"></script>
+<script src="{{ url_for('static', filename='/assets/js/breakpoints.min.js') }}"></script>
+<script src="{{ url_for('static', filename='/assets/js/util.js') }}"></script>
+<script src="{{ url_for('static', filename='/assets/js/main.js') }}"></script>
+<script src="{{ url_for('static', filename='/assets/js/script.js') }}"></script>
 
 </body>
 </html>

@@ -28,6 +28,11 @@ def greet():
 def add_player():
     return render_template("add_player.html")
 
+@app.route("/welcome/<player>")
+def welcome(player):
+    new_player = unquote(player)
+    return render_template("welcome.html", player=new_player)
+
 
 @app.route("/create-player")
 def create_player():
