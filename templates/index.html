@@ -1,194 +1,97 @@
-<!DOCTYPE HTML>
-<!--
-	Spectral by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>FXMT Darts</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="static/assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="static/assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="landing is-preload">
-
-		<!-- Page Wrapper -->
-			<div id="page-wrapper">
-
-				<!-- Header -->
-					<header id="header" class="alt">
-						<h1><a href="index.html">FXMT Darts</a></h1>
-						<nav id="nav">
-							<ul>
-								<li class="special">
-									<a href="#menu" class="menuToggle"><span>Menu</span></a>
-									<div id="menu">
-										<ul>
-											<li><a href="index.html">Home</a></li>
-											<li><a href="stats.html">Stats</a></li>
-										</ul>
-									</div>
-								</li>
-							</ul>
-						</nav>
-					</header>
-
-				<!-- Banner -->
-					<section id="banner">
-						<div class="logo">
-							<h1>Hello</h1>
-							<h2>FXMT Darts</h2>
-							<img id="logo-image" src="static/images/fox.png">
-						</div>
-						
-						<div class="inner">
-							<div class="row">
-								<div class="col-6">
-									<div class="form-group">
-										<h3>Choose Player 1.</h3>
-										<fieldset>
-										{% for player in players %}
-											<input type="radio" id="{{ player.playerId }}" name="player1" value="{{ player.name }}">
-											<label for = "{{ player.playerId }}">{{ player.name }}</label>
-										{%endfor%}
-										</fieldset>
-									</div>
-										
-								</div>
-								<div class="col-6">
-									<div class="form-group">
-										<h3>Choose Player 2.</h3>
-										<fieldset>
-										{% for player in players %}
-											<input type="radio" id="{{ player.playerId }}_2" name="player2" value="{{ player.name }}">
-											<label for = "{{ player.playerId }}_2">{{ player.name }}</label>
-										{%endfor%}
-										</fieldset>
-									</div>
-										
-								</div>
-							</div>
-							<ul class="actions special">
-								<li><a href="#" id="select-players" class="button primary">Game on!</a></li>
-							</ul>
-						</div>
-						
-					</section>
-
-				<!-- One -->
+{% extends "layout.html" %}
+{% block content %}
+	
+	<div class="inner">
+		<div class="row">
+			<div class="col-6">
+				<div class="form-group">
+					<h3>Choose Player 1.</h3>
+					<fieldset>
+					{% for player in players %}
+						<input type="radio" id="{{ player.playerId }}" name="player1" value="{{ player.name }}">
+						<label for = "{{ player.playerId }}">{{ player.name }}</label>
+					{%endfor%}
+					</fieldset>
+				</div>
 					
-
-				<!-- Two -->
-					<section id="two" class="wrapper alt style2">
-						
-						<section class="spotlight div-player style1">
-							<div class="player-info">
-								<h2></h2>
-							</div>
-							<div class="image"><img class="player-img" src="" alt="" /></div>
-							<div class="content">
-								<div class="table-wrapper">
-									<table id="pl1_score">
-										<thead>
-											<tr>
-												<th>Score</th>
-												<th>Last</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<td>501</td>
-											</tr>
-										</tbody>
-									</table>
-									<input class="user-score-input" type="number" id="user-score-1" name="input-score-1" placeholder="0">
-									<label for="input-score-1">Enter Score.</label>
-								</div>
-							</div>
-						</section>
-					</section>
-					<section id="three" class="wrapper alt style4">
-						
-						<section class="spotlight div-player">
-							<div class="player-info">
-								<h2></h2>
-							</div>
-							<div class="image"><img class="player-img" src="" alt="" /></div>
-							<div class="content">
-								<div class="table-wrapper">
-									<table id="pl2_score">
-										<thead>
-											<tr>
-												<th>Score</th>
-												<th>Last</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<td>501</td>
-											</tr>
-										</tbody>
-									</table>
-									<input class="user-score-input" type="number" id="user-score-2" name="input-score-2" placeholder="0">
-									<label for="input-score-2">Enter Score.</label>
-								</div>
-							</div>
-						</section>
-					</section>
-
-
-
-
-						<!-- <section class="spotlight div-player">
-							<div class="content">
-								<div class="table-wrapper">
-									<table id="pl2_score">
-										<thead>
-											<tr>
-												<th>Score</th>
-												<th>Last</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<td>501</td>
-											</tr>
-										</tbody>
-									</table>
-									<input class="user-score-input" type="number" id="user-score-2" name="input-score-2" value="" placeholder="0">
-								</div>
-							</div>
-							<h2 style="padding-left: 1em;">Senor Hot Fingers</h2>
-							<div class="image"><img class = "player-img" src="static/images/shf.jpg" alt="" /></div>
-							
-						</section> -->
-					
-
-			
-				<!-- Footer -->
-					<footer id="footer">
-						<ul class="copyright">
-							<li>&copy; Señor Hot Fingers</li><li>FXMT Darts App</li>
-						</ul>
-						<ul class="copyright">
-							<li>&copy; Untitled</li><li>HTML Template: <a href="http://html5up.net">HTML5 UP</a></li>
-						</ul>
-						<div style="font-size:x-small;">Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
-					</footer>
-
 			</div>
+			<div class="col-6">
+				<div class="form-group">
+					<h3>Choose Player 2.</h3>
+					<fieldset>
+					{% for player in players %}
+						<input type="radio" id="{{ player.playerId }}_2" name="player2" value="{{ player.name }}">
+						<label for = "{{ player.playerId }}_2">{{ player.name }}</label>
+					{%endfor%}
+					</fieldset>
+				</div>
+					
+			</div>
+		</div>
+		<ul class="actions special">
+			<li><a href="#" id="select-players" class="button primary">Game on!</a></li>
+		</ul>
+	</div>
+	
+</section>
 
-		<!-- Scripts -->
-			<script src="static/assets/js/jquery.min.js"></script>
-			<script src="static/assets/js/jquery.scrollex.min.js"></script>
-			<script src="static/assets/js/jquery.scrolly.min.js"></script>
-			<script src="static/assets/js/browser.min.js"></script>
-			<script src="static/assets/js/breakpoints.min.js"></script>
-			<script src="static/assets/js/util.js"></script>
-			<script src="static/assets/js/main.js"></script>
-			<script src="static/assets/js/script.js"></script>
+<!-- Two -->
+<section id="two" class="wrapper alt style2">
+	
+	<section class="spotlight div-player style1">
+		<div class="player-info">
+			<h2></h2>
+		</div>
+		<div class="image"><img class="player-img" src="" alt="" /></div>
+		<div class="content">
+			<div class="table-wrapper">
+				<table id="pl1_score">
+					<thead>
+						<tr>
+							<th>Score</th>
+							<th>Last</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>501</td>
+						</tr>
+					</tbody>
+				</table>
+				<input class="user-score-input" type="number" id="user-score-1" name="input-score-1" placeholder="0">
+				<label for="input-score-1">Enter Score.</label>
+			</div>
+		</div>
+	</section>
+</section>
+<section id="three" class="wrapper alt style4">
+	
+	<section class="spotlight div-player">
+		<div class="player-info">
+			<h2></h2>
+		</div>
+		<div class="image"><img class="player-img" src="" alt="" /></div>
+		<div class="content">
+			<div class="table-wrapper">
+				<table id="pl2_score">
+					<thead>
+						<tr>
+							<th>Score</th>
+							<th>Last</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>501</td>
+						</tr>
+					</tbody>
+				</table>
+				<input class="user-score-input" type="number" id="user-score-2" name="input-score-2" placeholder="0">
+				<label for="input-score-2">Enter Score.</label>
+			</div>
+		</div>
+	</section>
+</section>
+{% endblock content %}
 
-	</body>
-</html>
+

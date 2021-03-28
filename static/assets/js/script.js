@@ -75,7 +75,8 @@
             // change player
         }
         $(this).removeAttr("disabled");
-    }
+    };
+    
     var validate_request = (player, score) => {
         return ($.ajax({
             type: 'GET',
