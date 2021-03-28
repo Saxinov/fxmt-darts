@@ -4040,6 +4040,22 @@ input, select, textarea {
 		max-height: 40%;
 	}
 
+	.create-player {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+	}
+
+		.create-player input {
+			width: 50%;
+			background-color: mediumblue;
+			opacity: 0.7;
+			border-radius: 5%;
+		}
+
+	.error-message {
+		color: #ed4933;
+	}
 	#logo-image {
 		width: 30%;
 	}

@@ -24,6 +24,10 @@ def greet():
         
     return render_template("index.html", players=players)
 
+@app.route("/add-player")
+def add_player():
+    return render_template("add_player.html")
+
 
 @app.route("/create-player")
 def create_player():

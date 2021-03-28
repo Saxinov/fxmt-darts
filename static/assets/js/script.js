@@ -76,7 +76,7 @@
         }
         $(this).removeAttr("disabled");
     };
-    
+
     var validate_request = (player, score) => {
         return ($.ajax({
             type: 'GET',
@@ -163,19 +163,22 @@
     }; 
             // $("#pl2_score").append(`<li class='list-group_item score-item'>${score}</li>`)
             
-    // var submit_new_player = () => {
-    //     player_name = $("#new-player-name").val();
-    //     $.ajax({
-    //         url: `${window.origin}/create-player`,
-    //         data: {"name": encodeURI(player_name)},
-    //         type: "GET",
-    //         cache: false,
-    //         success: function() {
-    //             location.reload(true);
-    //         }
+    var submit_new_player = () => {
+        player_name = $("#new-player-name").val();
+        $.ajax({
+            url: `${window.origin}/create-player`,
+            data: {"name": encodeURI(player_name)},
+            type: "GET",
+            cache: false,
+            success: function() {
+                window.location.href = `${window.origin}/welcome`
+            },
+            error: function () {
+                $("<p class='error-message'>Could not create player.</p>").insertAfter('#submit-new-player')
+            }
 
-    //     })
-    // };
+        })
+    };
 
     // var play_audio = (score) => {
     //     var audio = new Audio(`static/audio_dateien/${score}.m4a`);
@@ -184,7 +187,7 @@
 
    // $("#enter-new-player").click(enable_new_player);
 
-   // $("#submit-new-player").on("click", submit_new_player)
+    $("#submit-new-player").on("click", submit_new_player)
 
     $("#select-players").click(() => {
             var pl1 = $('input[name = "player1"]:checked').val();
