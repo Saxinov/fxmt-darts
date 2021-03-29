@@ -144,10 +144,13 @@
     var display_match_stats = (response, player) => {
         var avg_elem = player == 1 ? $(".match-average")[0] : $(".match-average")[1]
         var count_elem = player == 1 ? $(".match-num-darts")[0] : $(".match-num-darts")[1]
+        var tw6_elem = player == 1 ? $(".match-26")[0] : $(".match-26")[1]
         var cur_avg = response["average"];
         var cur_counter = response["dart_counter"];
-        avg_elem.innerText = avg_elem.innerText + cur_avg;
-        count_elem.innerText = count_elem.innerText + cur_counter;
+        var cur_twenty6 = response["twenty6"];
+        avg_elem.innerText = "3-Darts Average:  " + cur_avg;
+        count_elem.innerText = "Thrown:  " + cur_counter;
+        tw6_elem.innerText = "twenty6:  " + cur_twenty6;
     }
 
     var clear_score = (player) => { 
