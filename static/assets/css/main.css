@@ -2693,7 +2693,9 @@ input, select, textarea {
 			border-radius: 0;
 			width: 30%;
 			display: flex;
-			justify-content: center;
+			justify-content: flex-start;
+			margin-left: 5%;
+			max-height: 300px;
 		}
 
 			.spotlight .image img {
