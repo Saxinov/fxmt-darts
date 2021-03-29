@@ -2426,7 +2426,7 @@ input, select, textarea {
 		height: 3.125em;
 		letter-spacing: 0.225em;
 		line-height: 3.125em;
-		max-width: 30em;
+		max-width: 15em;
 		padding: 0 2.75em;
 		text-align: center;
 		text-decoration: none;
@@ -2721,7 +2721,7 @@ input, select, textarea {
 		}
 
 		.spotlight:nth-child(1) {
-			background-color: rgba(0, 0, 0, 0.075);
+			background-color: rgba(22, 14, 245, 0.15);;
 		}
 
 		.spotlight:nth-child(2) {
@@ -4038,6 +4038,10 @@ input, select, textarea {
 		display: block;
 		max-width: 15%;
 		max-height: 40%;
+	}
+
+	.logo h2 {
+		margin-bottom: 0.2em;
 	}
 
 	.game-init {

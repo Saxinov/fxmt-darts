@@ -2,7 +2,7 @@
 {% block content %}
 	
 	<div class="inner">
-		<div class="row">
+		<div class="row" style="margin-top: 5%;">
 			<div class="col-6">
 				<div class="form-group">
 					<h3>Choose Player 1.</h3>
@@ -64,8 +64,17 @@
 						</tr>
 					</tbody>
 				</table>
-				<input class="user-score-input" type="number" id="user-score-1" name="input-score-1" placeholder="0">
-				<label for="input-score-1">Enter Score.</label>
+			</div>
+			<div class="row score-control">
+				<div class="col-6">
+					<input class="user-score-input" type="number" id="user-score-1" name="input-score-1" placeholder="0">
+					<label for="input-score-1">Enter Score.</label>
+				</div>
+				<div class="col-6">
+					<ul class="actions special">
+						<li class="delete-score button primary">Reset Last Score</li>
+					</ul>
+				</div>	
 			</div>
 		</div>
 	</section>
@@ -99,9 +108,19 @@
 						</tr>
 					</tbody>
 				</table>
-				<input class="user-score-input" type="number" id="user-score-2" name="input-score-2" placeholder="0">
-				<label for="input-score-2">Enter Score.</label>
 			</div>
+			<div class="row score-control">
+				<div class="col-6">
+					<input class="user-score-input" type="number" id="user-score-2" name="input-score-2" placeholder="0">
+					<label for="input-score-2">Enter Score.</label>
+				</div>
+				<div class="col-6">
+					<ul class="actions special">
+						<li class="delete-score button primary">Reset Last Score</li>
+					</ul>
+				</div>	
+			</div>
+			
 		</div>
 	</section>
 </section>

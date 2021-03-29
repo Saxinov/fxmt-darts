@@ -102,36 +102,27 @@
         )
     }
 
-    // var delete_score = () => {
-    //     var player = (event.target == $(".delete-score")[0])? 1 : 2;
-    //     return ($.ajax({
-    //         type: 'GET',
-    //         url: `${window.origin}/delete-last-score/${player}`,
-    //         success: function(res){
-    //             open_score = res.current_score;
-    //             player_name = res.name;
-    //             var score_elem = player == 1 ? "#pl1_score": "#pl2_score";
-    //             var last_elem = player == 1 ? "#pl1_last_score": "#pl2_last_score";
-    //             $(`${score_elem} li`).last().remove();
-    //             $(`${score_elem} li`).last().css("opacity", "100%");
-    //             $(`${last_elem} li`).last().remove();
-    //             $(`${last_elem} li`).last().css("opacity", "100%");
-    //             display_match_stats(res, player);
+    var delete_score = () => {
+        var player = (event.target == $(".delete-score")[0])? 1 : 2;
+        return ($.ajax({
+            type: 'GET',
+            url: `${window.origin}/delete-last-score/${player}`,
+            success: function(res){
+                open_score = res.current_score;
+                player_name = res.name;
+                var elem = player == 1 ? "#pl1_score tbody": "#pl2_score tbody";
+                $(elem).find("tr").empty().append(`<td>${open_score}</td><td></td>`);
+                display_match_stats(res, player);
                 
                 
-    //         },
-    //         error: function() {
-    //                 alert("No score to delete.")
-    //             }
-    //         })
-    //     )
-    // }
+            },
+            error: function() {
+                    alert("No score to delete.")
+                }
+            })
+        )
+    }
 
-    // var enable_new_player = () => {
-    //     $("#new-player-name").css("display", "block");
-    //     $("#submit-new-player").css("display", "block");
-
-    // }
         
 
 
@@ -188,7 +179,6 @@
     //     audio.play();
     // };
 
-   // $("#enter-new-player").click(enable_new_player);
 
     $("#submit-new-player").on("click", submit_new_player)
 
@@ -214,6 +204,6 @@
 
     $('.user-score-input').on('keydown', enter_score);
     
-    //$(".delete-score").on("click", delete_score);
+    $(".delete-score").on("click", delete_score);
 
  });
