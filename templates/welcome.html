@@ -2,73 +2,20 @@
 {% block content %}
 	
 	<div class="inner">
-		<div class="row" style="justify-content: center;">
-			<div class="welcome-player" style="width: 60%;">
-				<p>{{ player }}</p>
+		<div class="row" style="justify-content: center; align-items: center;">
+			<div class="welcome-player">
+				<p>Welcome to FXMT Darts: {{ player }}</p>
 			</div>
+			<div>
+				<iframe src="https://giphy.com/embed/JTPBO0v9xTy5KZggKI" width="300" height="180" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p style="font-size: 0.2em;"><a href="https://giphy.com/gifs/memecandy-JTPBO0v9xTy5KZggKI">via GIPHY</a></p>
+			</div>
+				
+		</div>
 			<ul class="actions special">
-				<li><a id="back-to-homepage" class="button primary">Go to game</a></li>
+				<li><a href="{{ url_for('greet') }}" id="back-to-homepage" class="button primary">Go to game</a></li>
 			</ul>		
 		</div>	
 	</div>
-</section>
-
-<!-- Two -->
-<section id="two" class="wrapper alt style2">
-	
-	<section class="spotlight div-player style1">
-		<div class="player-info">
-			<h2></h2>
-		</div>
-		<div class="image"><img class="player-img" src="" alt="" /></div>
-		<div class="content">
-			<div class="table-wrapper">
-				<table id="pl1_score">
-					<thead>
-						<tr>
-							<th>Score</th>
-							<th>Last</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>501</td>
-						</tr>
-					</tbody>
-				</table>
-				<input class="user-score-input" type="number" id="user-score-1" name="input-score-1" placeholder="0">
-				<label for="input-score-1">Enter Score.</label>
-			</div>
-		</div>
-	</section>
-</section>
-<section id="three" class="wrapper alt style4">
-	
-	<section class="spotlight div-player">
-		<div class="player-info">
-			<h2></h2>
-		</div>
-		<div class="image"><img class="player-img" src="" alt="" /></div>
-		<div class="content">
-			<div class="table-wrapper">
-				<table id="pl2_score">
-					<thead>
-						<tr>
-							<th>Score</th>
-							<th>Last</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>501</td>
-						</tr>
-					</tbody>
-				</table>
-				<input class="user-score-input" type="number" id="user-score-2" name="input-score-2" placeholder="0">
-				<label for="input-score-2">Enter Score.</label>
-			</div>
-		</div>
-	</section>
 </section>
 {% endblock content %}
 
