@@ -4040,6 +4040,10 @@ input, select, textarea {
 		max-height: 40%;
 	}
 
+	.game-init {
+		visibility: hidden;
+	}
+
 	.create-player {
 		width: 100%;
 		display: flex;
@@ -4066,6 +4070,9 @@ input, select, textarea {
 			font-size: 1.5em;
 		}
 
+	.game-stats {
+		width: 85%;
+	}
 
 
 	#logo-image {

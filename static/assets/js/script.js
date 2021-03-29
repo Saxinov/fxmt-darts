@@ -53,6 +53,7 @@
         $($(".player-img")[1]).attr("src", `${img_folder}/${player2["img_path"]}`);
         $(".div-player h2")[0].innerText = player1["name"];
         $(".div-player h2")[1].innerText = player2["name"];
+        $(".game-init").css("visibility", "visible");
         $([document.documentElement, document.body]).animate({
                 scrollTop: $($(".div-player")[0]).offset().top - 100
             }, 2000);
@@ -85,7 +86,7 @@
                 open_score = res.current_score;
                 player_name = res.name;
                 update_score(open_score, score, player);
-                // display_match_stats(res, player);
+                display_match_stats(res, player);
                 // play_audio(score);
                 if (open_score == 0){
                     win_game(player);
@@ -140,16 +141,14 @@
 
     };
 
-    // var display_match_stats = (response, player) => {
-    //     console.log(response);
-    //     console.log(player)
-    //     var avg_elem = player == 1 ? $(".match-average")[0] : $(".match-average")[1]
-    //     var count_elem = player == 1 ? $(".match-num-darts")[0] : $(".match-num-darts")[1]
-    //     var cur_avg = response["average"];
-    //     var cur_counter = response["dart_counter"];
-    //     avg_elem.innerText = cur_avg;
-    //     count_elem.innerText = cur_counter;
-    // }
+    var display_match_stats = (response, player) => {
+        var avg_elem = player == 1 ? $(".match-average")[0] : $(".match-average")[1]
+        var count_elem = player == 1 ? $(".match-num-darts")[0] : $(".match-num-darts")[1]
+        var cur_avg = response["average"];
+        var cur_counter = response["dart_counter"];
+        avg_elem.innerText = avg_elem.innerText + cur_avg;
+        count_elem.innerText = count_elem.innerText + cur_counter;
+    }
 
     var clear_score = (player) => { 
         var input_elem = player == 1 ? "#user-score-1": "#user-score-2";
