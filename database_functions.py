@@ -98,6 +98,16 @@ def return_players_stats(playername):
         cur.close()
         return stats
     
+def delete_test_entries():
+    con = sqlite3.connect('database.sqlite')
+    cur = con.cursor()
+    cur.execute("DELETE FROM game_history WHERE test_entry = 1")
+    cur.execute("DELETE FROM averages WHERE test_entry = 1")
+    con.commit()
+    con.close()
+    print("Successfully deleted test entries.")
+    
+    
 # shf_stats = return_players_stats("Señor Hot Fingers")
 # add_game_to_history("El Gran Caero", "Señor Hot Fingers", winner_pl1=False, testEntry=1)
 # add_average_to_history("Señor Hot Fingers", "Hallos", random.randint(1, 60), 3, testEntry=1)

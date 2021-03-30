@@ -28,6 +28,7 @@ def calculate_possible_scores():
     return third_dart
 
 possible_scores = calculate_possible_scores()
+print(list(possible_scores))
 
 
 
