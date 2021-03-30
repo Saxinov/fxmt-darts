@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block content %}
+	
+	<div class="inner">
+		<div class="row" style="justify-content: center; align-items: center;">
+			<div class="winning-player">
+				<h3>Born to win: {{ winner.name }}</h3>
+				<p>Darts used before Finish: {{ winner.dart_counter }}</p>
+				<p>With an average of: {{ winner.average }}</p>
+				<p>Gloriously placed 26er: {{ winner.twenty6 }}</p>
+			</div>
+			<div>
+				<iframe src="https://giphy.com/embed/ddHhhUBn25cuQ" width="300" height="180" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/ftw-coachs-ddHhhUBn25cuQ">via GIPHY</a></p>
+			</div>
+				
+		</div>
+			<ul class="actions special">
+				<li><a href="{{ url_for('greet') }}" id="back-to-homepage" class="button primary">New Game</a></li>
+			</ul>		
+		</div>	
+	</div>
+</section>
+{% endblock content %}
+
+

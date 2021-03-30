@@ -4084,3 +4084,9 @@ input, select, textarea {
 	#logo-image {
 		width: 30%;
 	}
+
+	.winning-player {
+		background-color: mediumblue;
+		opacity: 0.7;
+		text-align: left;
+	}

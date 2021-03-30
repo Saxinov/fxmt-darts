@@ -82,13 +82,18 @@ def validate_score(player, score):
    
 @app.route("/game-end/<player>")
 def end_game(player):
-    winners_name = session[player]["name"]
-    add_game_to_history(session["1"]["name"], session["2"]["name"], winner_pl1=(player=="1"),testEntry=1)
-    add_average_to_history(session["1"]["name"], session["2"]["name"], session["1"]["average"],session["1"]["twenty6"])
-    add_average_to_history(session["2"]["name"], session["1"]["name"], session["2"]["average"],session["2"]["twenty6"])
-    session["1"] = None
-    session["2"] = None
-    return "<h1>The winner is: {}</h1>".format(winners_name)
+    try:
+        winner = session[player]
+        add_game_to_history(session["1"]["name"], session["2"]["name"], winner_pl1=(player=="1"),testEntry=1)
+        add_average_to_history(session["1"]["name"], session["2"]["name"], session["1"]["average"],session["1"]["twenty6"])
+        add_average_to_history(session["2"]["name"], session["1"]["name"], session["2"]["average"],session["2"]["twenty6"])
+        session["1"] = None
+        session["2"] = None
+        return render_template("game-end.html", winner=winner)
+    
+    except TypeError:
+        return redirect(url_for('greet'), 301)
+    
     
 @app.route("/delete-last-score/<player>")
 def delete_score(player):
