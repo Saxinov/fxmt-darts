@@ -58,9 +58,6 @@
         $([document.documentElement, document.body]).animate({
                 scrollTop: $($(".div-player")[0]).offset().top - 100
             }, 2000);
-        //$("#greeting").css("display", "none");
-        //$("#game-settings").css("display", "none");
-        //game_div.css("display", "block");
         
     }
         // make http request
